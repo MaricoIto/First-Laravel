@@ -16,7 +16,7 @@ use App\Http\Controllers\RoomController;
 |
 */
 
-Route::get('/test',[TestController::class, 'index']);
+Route::get('/', [TestController::class, 'index']);
 Route::get('/test/Bonjour',[TestController::class, 'bonjour']);
 Route::get('/test/{room?}/{id?}',[RoomController::class, 'index']);
 Route::get('/hello', [HelloController::class, 'index']);

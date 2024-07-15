@@ -8,8 +8,10 @@ class TestController extends Controller
 {
     public function index()
         {
-            
-                return view('index');
+            $item = [
+                'content' => '本文'
+            ];
+                return view('index', $item);
         }
     public function bonjour()
         {
