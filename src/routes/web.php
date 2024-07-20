@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\MiddlewareController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,8 @@ use App\Http\Controllers\RoomController;
 */
 
 Route::get('/', [TestController::class, 'index']);
-Route::get('/test/Bonjour',[TestController::class, 'bonjour']);
-Route::get('/test/{room?}/{id?}',[RoomController::class, 'index']);
+Route::get('/test/Bonjour', [TestController::class, 'bonjour']);
+Route::get('/test/{room?}/{id?}', [RoomController::class, 'index']);
 Route::get('/hello', [HelloController::class, 'index']);
+Route::get('/middleware', [MiddlewareController::class, 'index']);
+Route::post('/middleware', [MiddlewareController::class, 'post'])->middleware('first');
