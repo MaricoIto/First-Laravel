@@ -22,4 +22,4 @@ Route::get('/test/Bonjour', [TestController::class, 'bonjour']);
 Route::get('/test/{room?}/{id?}', [RoomController::class, 'index']);
 Route::get('/hello', [HelloController::class, 'index']);
 Route::get('/middleware', [MiddlewareController::class, 'index']);
-Route::post('/middleware', [MiddlewareController::class, 'post'])->middleware('first');
+Route::post('/middleware', [MiddlewareController::class, 'post']);
